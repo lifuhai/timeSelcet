@@ -372,7 +372,6 @@ public class TimeSelectDialog extends Dialog implements View.OnClickListener {
         int day = calendar.get(Calendar.DAY_OF_YEAR);
         int day11 = calendar.get(Calendar.DAY_OF_MONTH);
 
-        Log.d("cccccccccc", "initData: "+day11);
         mYearPosition = (year - 2000);
         mMonthPosition = day11-1;//获取显示今天的位置
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
