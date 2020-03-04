@@ -401,6 +401,15 @@ public class TimeSelectDialog extends Dialog implements View.OnClickListener {
         if (mMinutePosition >=60) {
             mMinutePosition= mMinutePosition-60;
             mHourPosition=hour;
+            /**
+             *   判断时间是中午还是下午
+             */
+            if (hour>=12) {
+                mHourPosition=1;
+            }else {
+                mHourPosition=0;
+            }
+
         }
         yearList = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
@@ -439,7 +448,7 @@ public class TimeSelectDialog extends Dialog implements View.OnClickListener {
         String hour = hourTextAdapter.getItemText(mWvHour.getCurrentItem()).toString();
         String minute = minuteTextAdapter.getItemText(mWvMinute.getCurrentItem()).toString();
         int formatHour = Integer.parseInt(hour);
-        if (pmOrAm.equals("下午")) {
+        if (pmOrAm.equals("上午")) {
             if (formatHour == 12) {
                 //中午12点
                 hour = "12";

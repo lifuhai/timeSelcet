@@ -176,7 +176,6 @@ public abstract class AbstractWheelTextAdapter extends AbstractWheelAdapter {
                 if (text == null) {
                     text = "";
                 }
-                Log.d("ccccccccccc", "getItem: "+text);
                 textView.setText(text);
 
                 if (index == currentIndex) {

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setCancelTextColor(Color.BLUE) //取消按钮的颜色
                 .setConfirmTextColor(Color.RED) //确定按钮的颜色
                 .setCycle(false) //是否支持数据循环
-                .setBlur(true) //是否支持背景高斯模糊
+                .setBlur(false) //是否支持背景高斯模糊
                 .setFiveSecondInterval(false) //秒的数据是否为5的倍数
                 .setType(new boolean[]{false, true, true,true})
                 .setTimeSelectCallBack(new TimeSelectCallBack() {

@@ -69,8 +69,7 @@ public class BhUtils {
         cal.set(Calendar.MONTH, month - 1);// 1月从0开始
         cal.set(Calendar.DAY_OF_MONTH, day);// 设置为1号,当前日期既为本月第一天
         int count = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-        Log.d(TAG, "getMonthFullDay: "+count);
-        Log.d(TAG, "getMonthFullDay月: "+Calendar.DAY_OF_MONTH);
+
         for (int j = 0; j <= (count - 1); ) {
 
 
