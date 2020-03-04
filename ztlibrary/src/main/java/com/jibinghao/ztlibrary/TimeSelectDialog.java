@@ -398,17 +398,30 @@ public class TimeSelectDialog extends Dialog implements View.OnClickListener {
         /**
          *    默认选中时间加5分钟
          */
+
+
         if (mMinutePosition >=60) {
             mMinutePosition= mMinutePosition-60;
-            mHourPosition=hour;
+
+            mHourPosition = calendar.get(Calendar.HOUR);
             /**
              *   判断时间是中午还是下午
              */
-            if (hour>=12) {
-                mHourPosition=1;
+
+            if (hour == 12) {
+                mDayPosition = 0;
+                mHourPosition = 0;
+            }else if (hour > 12) {
+                mDayPosition = 1;
+                mHourPosition = calendar.get(Calendar.HOUR) ;
+            } else if (hour <12 &&hour>0) {
+                mDayPosition = 0;
+                mHourPosition = hour ;
             }else {
-                mHourPosition=0;
+                mDayPosition = 1;
+                mHourPosition = hour ;
             }
+
 
         }
         yearList = new ArrayList<>();
@@ -448,24 +461,25 @@ public class TimeSelectDialog extends Dialog implements View.OnClickListener {
         String hour = hourTextAdapter.getItemText(mWvHour.getCurrentItem()).toString();
         String minute = minuteTextAdapter.getItemText(mWvMinute.getCurrentItem()).toString();
         int formatHour = Integer.parseInt(hour);
-        if (pmOrAm.equals("上午")) {
+        if (pmOrAm.equals("下午")) {
             if (formatHour == 12) {
                 //中午12点
-                hour = "12";
+                hour = "00";
             } else {
                 formatHour = formatHour + 12;
                 hour = String.valueOf(formatHour);
             }
         } else {
             if (formatHour == 12) {
-                hour = "00";
+                hour = "12";
             } else {
                 if (formatHour < 10) {
                     hour = "0" + formatHour;
                 }
             }
         }
-        String result = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":00";
+//        String result = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":00";
+        String result =  month + "-" + day + " " + hour + ":" + minute ;
         return result;
     }
 
