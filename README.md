@@ -11,5 +11,5 @@
 # Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.lifuhai:timeSelcet:v1.0'
+	        implementation 'com.github.lifuhai:timeSelcet:v1.1'
 	}
