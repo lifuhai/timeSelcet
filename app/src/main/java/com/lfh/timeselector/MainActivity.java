@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
     /**
      * 时间选择器
-
      */
     private Button mButton;
 
